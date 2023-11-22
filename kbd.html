@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <label for="text-input">Enter some text:</label>
+  <input id="text-input" type="text">
+  <br><br>
+  <div id="output"></div>
+
+  <script>
+    const textInput = document.getElementById('text-input');
+    const outputDiv = document.getElementById('output');
+
+    textInput.addEventListener('keydown', function(event) {
+      outputDiv.innerHTML += `keydown: keyCode ${event.keyCode}<br>`;
+    });
+
+    textInput.addEventListener('keyup', function(event) {
+      outputDiv.innerHTML += `keyup: keyCode ${event.keyCode}<br>`;
+    });
+
+    textInput.addEventListener('keypress', function(event) {
+      outputDiv.innerHTML += `keypress: charCode ${event.charCode}<br>`;
+    });
+
+    textInput.addEventListener('input', function(event) {
+      outputDiv.innerHTML += `input: ${event.target.value}<br>`;
+    });
+  </script>
+</body>
+</html>

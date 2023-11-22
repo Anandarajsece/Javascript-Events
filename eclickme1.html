@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Attaching Event Handlers in External File</title>
+</head>
+<body>
+    <button type="button" id="myBtn">Click Me</button>
+    <button type="button" id="myBtn2">Click Me</button>
+    <script>
+        function sayHello()
+        {
+            alert('Hello CSE!');
+        }
+        function say()
+        {
+            alert('Hello First CSE!');
+        }
+
+        document.getElementById("myBtn").onclick = sayHello;
+        document.getElementById("myBtn2").onclick = say;
+    </script>
+</body>
+</html>

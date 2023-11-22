@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Highlight Example</title>
+    <style>
+        .highlighted {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function highlightInput(elm) {
+            // Add a CSS class to the element
+            elm.classList.add('highlighted');
+        }
+    </script>
+    <input type="text" onfocus="highlightInput(this)">
+    <button type="button" onclick="removeHighlight()">Remove Highlight</button>
+
+    <script>
+        function removeHighlight() {
+            // Get all elements with the 'highlighted' class
+            var highlightedElements = document.querySelectorAll('.highlighted');
+
+            // Remove the 'highlighted' class from all elements
+            highlightedElements.forEach(function (element) {
+                element.classList.remove('highlighted');
+            });
+        }
+    </script>
+</body>
+</html>

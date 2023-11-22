@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Document Methods Example</title>
+</head>
+<body>
+
+    <div id="exampleDiv">This is a sample div.</div>
+
+    <script>
+        // getElementById
+        var elementById = document.getElementById('exampleDiv');
+        console.log("getElementById:", elementById);
+
+        // getElementsByClassName
+        var elementsByClass = document.getElementsByClassName('exampleClass');
+        console.log("getElementsByClassName:", elementsByClass);
+
+        // getElementsByTagName
+        var paragraphs = document.getElementsByTagName('p');
+        console.log("getElementsByTagName:", paragraphs);
+
+        // getElementsByName
+        var elementsByName = document.getElementsByName('exampleName');
+        console.log("getElementsByName:", elementsByName);
+
+        // querySelector
+        var querySelector = document.querySelector('#exampleDiv');
+        console.log("querySelector:", querySelector);
+
+        // querySelectorAll
+        var querySelectorAll = document.querySelectorAll('p');
+        console.log("querySelectorAll:", querySelectorAll);
+
+        // createElement
+        var newDiv = document.createElement('div');
+        newDiv.textContent = 'Newly created div!';
+        document.body.appendChild(newDiv);
+
+        // createTextNode
+        var newText = document.createTextNode('This is a text node.');
+        elementById.appendChild(newText);
+
+        // appendChild
+        var newParagraph = document.createElement('p');
+        newParagraph.textContent = 'New paragraph.';
+        elementById.appendChild(newParagraph);
+
+        // removeChild
+        setTimeout(function () {
+            elementById.removeChild(newParagraph);
+        }, 2000);
+
+        // replaceChild
+        setTimeout(function () {
+            var replacementDiv = document.createElement('div');
+            replacementDiv.textContent = 'Replaced the old div!';
+            elementById.replaceChild(replacementDiv, newDiv);
+        }, 4000);
+
+        // style
+        elementById.style.color = 'blue';
+
+        // addEventListener
+        elementById.addEventListener('click', function() {
+            alert('Element clicked!');
+        });
+    </script>
+
+</body>
+</html>

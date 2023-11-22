@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button id="myButton">Click me!</button>
+  <p id="status"></p>
+
+  <script>
+    const button = document.querySelector('#myButton');
+    const status = document.querySelector('#status');
+
+    button.addEventListener('click', () => {
+      status.textContent = 'Button clicked!';
+    });
+
+    button.addEventListener('mouseover', () => {
+      status.textContent = 'Mouse over button!';
+    });
+
+    button.addEventListener('mouseout', () => {
+      status.textContent = 'Mouse out of button!';
+    });
+
+    button.addEventListener('mousedown', () => {
+      status.textContent = 'Mouse button down!';
+    });
+
+    button.addEventListener('mouseup', () => {
+      status.textContent = 'Mouse button up!';
+    });
+
+    button.addEventListener('mousemove', () => {
+      status.textContent = 'Mouse moving over button!';
+    });
+  </script>
+</body>
+</html>

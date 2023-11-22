@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+   <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br><br>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+   </form>
+   <p id="messagePara"></p>
+   <script>
+      const messagePara = document.getElementById("messagePara");
+      const form = document.querySelector('form');
+      const nameInput = document.querySelector('#name');
+      const emailInput = document.querySelector('#email');
+
+      form.addEventListener('submit', (event) => {
+         event.preventDefault();
+         messagePara.innerHTML = "Form submitted";
+      });
+
+      form.addEventListener('reset', () => {
+         messagePara.innerHTML = "Form reset";
+      });
+
+      nameInput.addEventListener('input', () => {
+         messagePara.innerHTML = "Name input changed";
+      });
+
+      emailInput.addEventListener('change', () => {
+         messagePara.innerHTML = "Email input changed";
+      });
+
+      nameInput.addEventListener('focus', () => {
+         messagePara.innerHTML = "Name input focused";
+      });
+
+      emailInput.addEventListener('blur', () => {
+         messagePara.innerHTML = "Email input blurred";
+      });
+   </script>
+   
+</body>
+</html>
